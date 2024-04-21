@@ -10,6 +10,20 @@ def hello():
     return render_template('cat.html')
 
 
+@app.route("/dog")
+def hello():
+    return render_template('dog.html')
+
+
+@app.route("/bird")
+def hello():
+    return render_template('bird.html')
+
+
+@app.route("/mouse")
+def hello():
+    return render_template('mouse.html')
+
 
 
 @app.route("/")
