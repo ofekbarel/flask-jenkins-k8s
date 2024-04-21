@@ -25,6 +25,15 @@ pipeline {
             }
             
         }
+
+        stage('test image') {
+            steps {
+                 echo 'Testing..'
+                sh 'docker stop $dockerImage || true'
+                sh 'docker rm $dockerImage || true'
+                sh 'docker run --name test $dockerImage /bin/bash -c "pytest test.py"'
+            }
+        }
         
         stage('push to azure registry') {
             steps {
